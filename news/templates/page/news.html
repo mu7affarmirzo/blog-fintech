@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    {% for news in object_list %}
+        <div class="post-entry">
+            <h2>{{ news.title }}</h2>
+            <p>{{ news.body }}</p>
+            <p>{{ news.author.username }}</p>
+    </div>
+    {% endfor %}
+{% endblock %}
