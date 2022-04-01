@@ -1,0 +1,17 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="post-entry">
+    <h1>DELETE NEWS</h1>
+        <form action="" method="post">
+            {% csrf_token %}
+            <p>Rostah ham "{{ news.title }}" shu yangilikni o'chirmoqchimisiz?</p>
+            <input type="submit" value="Confirm" />
+        </form>
+
+        </form>
+    </div>
+
+{% endblock %}

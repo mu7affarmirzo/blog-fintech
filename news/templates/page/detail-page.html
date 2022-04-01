@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="post-entry">
+        <h2>{{ news.title }}</h2>
+        <p>{{ news.body }}</p>
+        <p>{{ news.author.username }}</p>
+
+        <a href="{% url 'news:update-news-page' news.pk %}">+ Edit News Post</a>
+        <a href="{% url 'news:delete-news-page' news.pk %}">+ Delete News Post</a>
+    </div>
+
+{% endblock %}

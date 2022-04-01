@@ -2,11 +2,28 @@
 {% load static %}
 
 {% block content %}
-    {% for news in object_list %}
-        <div class="post-entry">
-            <h2>{{ news.title }}</h2>
-            <p>{{ news.body }}</p>
-            <p>{{ news.author.username }}</p>
-    </div>
-    {% endfor %}
+
+    <div class="top-news">
+            <div class="container-fluid">
+                <div class="row">
+                    {% for news in news_list %}
+
+                        <div class="col-md-6 tn-left">
+                            <div class="tn-img">
+                                <img src="{{ news.imageURL }}" />
+                                <div class="tn-content">
+                                    <div class="tn-content-inner">
+                                        <a class="tn-date" href=""><i class="far fa-clock"></i>{{ news.author.username }}</a>
+                                        <a class="tn-title" href="{% url 'news:detail-news-page' news.id %}">{{ news.title}}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+
+
+                </div>
+            </div>
+        </div>
 {% endblock %}
